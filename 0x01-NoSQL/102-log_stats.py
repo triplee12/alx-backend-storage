@@ -27,10 +27,10 @@ def nginx_stats_check():
                 "_id": "$ip",
                 "count": {"$sum": 1}
             }
-            },
-            {"$sort": {"count": -1}},
-            {"$limit": 10},
-            {"$project": {
+        },
+        {"$sort": {"count": -1}},
+        {"$limit": 10},
+        {"$project": {
                 "_id": 0,
                 "ip": "$_id",
                 "count": 1
